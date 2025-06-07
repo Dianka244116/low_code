@@ -875,6 +875,7 @@ label[for="burger-toggle"]::after {
   background: linear-gradient(to bottom, #f5f7fa, #ffffff);
   font-family: 'Roboto', sans-serif;
   color: #2e2e2e;
+  
 }
 
 .work__title {
@@ -897,6 +898,9 @@ label[for="burger-toggle"]::after {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  
 }
 
 .work__item {
