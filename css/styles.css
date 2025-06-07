@@ -1,4 +1,61 @@
 
+
+* {
+  box-sizing: border-box; /* Учитывать границы и отступы в ширине и высоте */
+  margin: 0; /* Удаляем отступы по умолчанию */
+  padding: 0; /* Удаляем внутренние отступы по умолчанию */
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 400px) {
+  /* Общие контейнеры в 1 колонку с шириной 100% */
+  .comparison__items,
+  .reviews__items,
+  .manual__item,
+  .work,
+  .low-code,
+  .no-code,
+  #manualBlock,
+  .advantages {
+    max-width: 100%;
+    margin: 0 auto; /* Центрируем контейнеры */
+    padding: 10px; /* Уменьшаем отступы */
+  }
+
+  /* Изображения */
+  .manual__item img,
+  .work__item img,
+  .low-code__item img,
+  .no-code__item img {
+    max-width: 100%; /* Ограничиваем ширину изображений */
+   
+  }
+
+  /* Текстовые блоки */
+  .manual__text,
+  .manual__list_item,
+  .work p,
+  .work__item p {
+    padding: 8px; /* Уменьшаем внутренние отступы */
+    line-height: 1.5; /* Увеличиваем межстрочный интервал для лучшей читаемости */
+    text-align: justify; /* Выравнивание текста по ширине */
+  }
+
+  /* Убираем лишние отступы у списков */
+  .manual__list_item {
+    margin-bottom: 10px; /* Уменьшаем отступ между элементами списка */
+    padding: 8px; /* Уменьшаем внутренние отступы */
+  }
+
+  /* Убираем отступы у заголовков */
+  .work__title,
+  .advantages__title,
+  .examples__title {
+    margin-bottom: 10px; /* Уменьшаем отступы */
+  }
+}
+
+
 /* Списки */
 .manual__list {
   padding-left: 20px;
@@ -263,28 +320,6 @@ label[for="burger-toggle"]::after {
   background: #e5e7eb;
 }
 
-/* Адаптивность */
-@media (max-width: 720px) {
-  .header__menu {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .comparison__items {
-    flex-direction: column;
-  }
-
-  .reviews__item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .aside {
-    display: none;
-  }
-}
-
 /* Блоки low-code и no-code */
 .low-code,
 .no-code {
@@ -527,6 +562,8 @@ label[for="burger-toggle"]::after {
   z-index: 1;
 }
 
+
+
 .examples__subtitle {
   text-align: center;
   font-size: 24px;
@@ -536,31 +573,9 @@ label[for="burger-toggle"]::after {
   z-index: 1;
 }
 
-.examples__item {
-  background: linear-gradient(145deg, #ffffff, #f0f4ff);
-  border-left: 6px solid #4a90e2;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  padding: 30px 24px;
-  margin: 30px auto;
-  max-width: 900px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  z-index: 1;
-  font-size: 15px;
-}
 
-.examples__item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-}
 
-.examples__item h4 {
-  font-size: 20px;
-  color: #ff6600;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
+
 
 .examples__item p,
 .examples__item li {
@@ -575,6 +590,53 @@ label[for="burger-toggle"]::after {
   padding-left: 20px;
 }
 
+
+/* Секция примеров использования */
+.main__examples {
+  padding: 20px 10px; /* Уменьшенные отступы для мобильных устройств */
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение элементов */
+  align-items: center; /* Центрирование содержимого */
+}
+
+.examples__item {
+  background: linear-gradient(145deg, #ffffff, #f0f4ff);
+  border-radius: 16px;
+  padding: 20px; /* Уменьшенные отступы */
+  margin: 10px 0; /* Отступы между элементами */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%; /* Ширина 100% для адаптивности */
+  max-width: 100%; /* Максимальная ширина 100% */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.examples__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.examples__item img {
+  max-width: 100%; /* Ограничиваем ширину изображений */
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+  border-radius: 12px; /* Сглаженные углы для изображений */
+  display: block; /* Убираем лишние пробелы под изображениями */
+  margin: 0 auto; /* Центрируем изображения */
+}
+
+/* Заголовки и текст в примерах */
+.examples__item h4 {
+  font-size: 18px; /* Размер заголовка */
+  color: #ff6600; /* Цвет заголовка */
+  margin-bottom: 12px; /* Отступ под заголовком */
+}
+
+.examples__item p {
+  font-size: 14px; /* Размер текста */
+  color: #333; /* Цвет текста */
+  line-height: 1.5; /* Межстрочный интервал */
+  text-align: justify; /* Выравнивание текста по ширине */
+}
 /* Преимущества */
 .advantages {
   padding: 20px 16px;
@@ -674,7 +736,8 @@ label[for="burger-toggle"]::after {
   font-family: 'Roboto', sans-serif;
   color: #2e2e2e;
   width: 100%;
-  max-width: 400px;
+  max-width: 1280px;
+  
 }
 
 .work__title {
@@ -712,6 +775,7 @@ label[for="burger-toggle"]::after {
   margin-bottom: 14px;
   text-align: justify;
   color: #333;
+  width: 100%;
 }
 
 .work__item ul {
@@ -742,6 +806,33 @@ label[for="burger-toggle"]::after {
   content: '✔️';
   margin-right: 6px;
   font-size: 16px;
+}
+
+.work {
+  width: 100vw; /* Занять всю ширину окна браузера */
+  max-width: 100vw; /* Ограничить максимальную ширину */
+  margin-left: calc(-50vw + 50%); /* Сдвинуть контейнер влево, чтобы компенсировать отступы родителя */
+  padding: 20px 0; /* Вертикальные отступы, горизонтальные убрать */
+  box-sizing: border-box;
+  background-color: #fff; /* Или другой фон, если нужно */
+}
+
+/* Если внутри есть контейнер с ограниченной шириной, убрать у него ограничения */
+.work .container {
+  max-width: none;
+  width: 100%;
+  padding: 0 20px; /* Если нужен небольшой внутренний отступ */
+  box-sizing: border-box;
+}
+
+/* Для адаптивности */
+@media (max-width: 768px) {
+  .work {
+    padding: 15px 0;
+  }
+  .work .container {
+    padding: 0 10px;
+  }
 }
 
 /* Мобильная адаптация */
@@ -822,5 +913,137 @@ footer {
   .advantages__item p {
     font-size: 13.5px;
     line-height: 1.5;
+  }
+}
+
+/* --- Адаптация под телефоны 400px --- */
+@media (max-width: 400px) {
+  /* Общие контейнеры в 1 колонку с шириной 100% */
+  .comparison__items {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+
+  .comparison__item {
+    flex: none;
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+
+  .reviews__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+
+  .reviews__item {
+    max-width: 100%;
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .reviews__Photo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .header > a:first-child img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .header__logo img {
+    width: 110px;
+  }
+
+  .header__menu {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .aside {
+    display: none;
+  }
+
+  .low-code,
+  .no-code,
+  #manualBlock,
+  .work,
+  .advantages {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px 15px;
+  }
+
+  .manual__item {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .manual__item img {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .manual__text,
+  .manual__list_item {
+    padding: 10px 12px;
+  }
+
+  .work {
+    max-width: 100%;
+    padding: 16px 12px;
+  }
+
+  .work__title {
+    font-size: 18px;
+  }
+
+  .work p,
+  .work__item p {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .work__item li {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .advantages__items {
+    gap: 12px;
+  }
+
+  .advantages__item {
+    padding: 14px 12px;
+  }
+
+  .advantages__item h3,
+  .advantages__item h4 {
+    font-size: 14px;
+  }
+
+  .advantages__item p {
+    font-size: 13px;
+  }
+
+  footer {
+    padding: 16px 12px;
+  }
+
+  .footer__content {
+    max-width: 100%;
+  }
+
+  .footer__copy {
+    font-size: 13px;
   }
 }
