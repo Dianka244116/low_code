@@ -745,7 +745,7 @@ label[for="burger-toggle"]::after {
 }
 
 /* Мобильная адаптация */
-@media (max-width: 400px) {
+@media (max-width: 1280px) {
   .work {
     padding: 18px 12px;
   }
